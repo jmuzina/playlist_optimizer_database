@@ -1,0 +1,13 @@
+services:
+  playlist_optimizer_postgres_instance:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      # Copy data from ./scripts/schema.sql to the database if it has no data
+      - ./data/schema.sql:/docker-entrypoint-initdb.d/init.sql
+    expose:
+      - "5433"
+    ports:
+      - "5433:5432"
