@@ -1,5 +1,6 @@
 services:
-  playlist_optimizer_postgres_instance:
+  playlist_optimizer_postgres_database_instance:
+    container_name: ${POSTGRES_DOCKER_CONTAINER_NAME}
     image: postgres
     restart: always
     environment:

@@ -95,6 +95,29 @@ ALTER TABLE ONLY playlist_optimizer."user" ALTER COLUMN id SET DEFAULT nextval('
 
 
 --
+-- Data for Name: spotify_user; Type: TABLE DATA; Schema: playlist_optimizer; Owner: postgres
+--
+
+COPY playlist_optimizer.spotify_user (id, u_id_fk) FROM stdin;
+\.
+
+
+--
+-- Data for Name: user; Type: TABLE DATA; Schema: playlist_optimizer; Owner: postgres
+--
+
+COPY playlist_optimizer."user" (id) FROM stdin;
+\.
+
+
+--
+-- Name: User_id_seq; Type: SEQUENCE SET; Schema: playlist_optimizer; Owner: postgres
+--
+
+SELECT pg_catalog.setval('playlist_optimizer."User_id_seq"', 1, false);
+
+
+--
 -- Name: spotify_user SpotifyUser_pkey; Type: CONSTRAINT; Schema: playlist_optimizer; Owner: postgres
 --
 
