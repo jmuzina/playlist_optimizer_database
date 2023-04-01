@@ -18,7 +18,7 @@ def dump_metadata(id:str, data_inclusive:bool=False):
     @param data_inclusive: Whether to include data in the export. If true, schema & data are copied. Otherwise, only schema DDL is copied.
     """
     args = ['docker', 'exec', id, 'sh', '-c', 'pg_dump -U postgres -n playlist_optimizer -f {docker_container_dump_path}'.format(docker_container_dump_path=docker_container_dump_path)]
-    if data_inclusive:
+    if data_inclusive != True:
         args.append('-s')
     print('Creating schema dump...')
     subprocess.call(args)

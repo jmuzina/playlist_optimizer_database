@@ -7,14 +7,14 @@ def get_container_id(name_or_id: str) -> str:
     """
     try:
         id = subprocess.check_output([
-            'docker-compose', 'ps', '-q', name_or_id
+            'docker', 'compose', 'ps', '-q', name_or_id
         ])
         return id.decode('utf-8').rstrip()
     except subprocess.CalledProcessError:
         pass
 
 def stop_service(service_name: str) -> str:
-    return subprocess.check_output(['docker-compose', 'rm', '-f', '-s', '-v', service_name])
+    return subprocess.check_output(['docker', 'compose', 'rm', '-f', '-s', '-v', service_name])
     
 
 def start_service(name: str) -> str:
@@ -27,7 +27,7 @@ def start_service(name: str) -> str:
     if existing_id is not None:
         stop_service(name)
 
-    subprocess.call(['docker-compose', 'up', '--force-recreate', '-d', name])
+    subprocess.call(['docker', 'compose', 'up', '--force-recreate', '-d', name])
     created_id = get_container_id(name)
 
     if created_id is None:
