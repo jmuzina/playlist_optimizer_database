@@ -5,9 +5,6 @@ Playlist Optimzer is an open-source web application that allows users to analyze
 It was born out of a frequent issue I face; skipping song after song in Spotify playlists. When you have hundreds of songs in a playlist, it becomes overwhelming to remove songs you don't want to listen to anymore.
 
 It is a modern re-imagining of [Spotify Playlist Optimizer](https://github.com/jmuzina/spotify_playlist_optimizer), a naïve implementation I made when I was still very new to programming. With the skills I've gained since graduating and getting into industry, I'm looking forward to making this app more modern, performant, and intuitive!
-
-The legacy version is accessible at [https://joemuzina.com:8080](https://joemuzina.com:8080).
-
 ------------------
 ## Planned features
 
